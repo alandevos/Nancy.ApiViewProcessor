@@ -1,0 +1,16 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+@{
+    string layout = "Views/Shared/_MainLayout.cshtml";
+
+    string body = "Hello HTML";
+
+    if (ViewBag.RequestType == "text")
+    {
+        layout = null;
+        body = "Hello API";
+    }
+
+    Layout = layout;
+}
+
+<div class="page">@body</div>
