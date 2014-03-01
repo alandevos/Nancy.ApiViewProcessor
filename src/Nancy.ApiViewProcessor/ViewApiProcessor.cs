@@ -35,7 +35,7 @@ namespace Nancy
 
         public Response Process(MediaRange requestedMediaRange, dynamic model, NancyContext context)
         {
-            context.ViewBag.RequestType = "text";
+            context.ViewBag.RequestType = "api";
 
             var response = (Response)this.viewFactory.RenderView(context.NegotiationContext.ViewName, model, GetViewLocationContext(context));
 

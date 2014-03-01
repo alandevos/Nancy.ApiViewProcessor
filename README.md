@@ -9,15 +9,15 @@ An example of how you can use [Nancy's content negotiation](https://github.com/N
 ```C#
 bool matchingContentType = requestedMediaRange.Matches("text/plain");
 ```
-When it processes the response, it adds a ViewBag property to let the view know that this is a 'text' content request.
+When it processes the response, it adds a ViewBag property to let the view know this is an 'api' request.
 ```C#
-context.ViewBag.RequestType = "text";
+context.ViewBag.RequestType = "api";
 ```
 Then, the view can use that information to customize the view.  For instance, by setting `Layout = null` and returning a partial:
 ```C#
 string layout = "Views/Shared/_MainLayout.cshtml";
 
-if (ViewBag.RequestType == "text")
+if (ViewBag.RequestType == "api")
 {
 	layout = null;
 }
@@ -28,4 +28,4 @@ Finally, in the module, rather than `return View["Index"]`, we have to call the 
 ```C#
 return Negotiate.WithView("Index");
 ```
-The Negotiator has several other methods that can be used to further customize the response.
+The [Negotiator](https://github.com/NancyFx/Nancy/wiki/Content-Negotiation) has several other methods that can be used to further customize the response.
