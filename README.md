@@ -24,7 +24,7 @@ if (ViewBag.RequestType == "api")
 
 Layout = layout;
 ```
-Finally, in the module, rather than `return View["Index"]`, we have to call the Negotiator.
+Finally, in the module, rather than `return View["Index"]`, we have to return `Negotiator`.
 ```C#
 return Negotiate.WithView("Index");
 ```
