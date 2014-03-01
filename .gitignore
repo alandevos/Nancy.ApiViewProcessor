@@ -91,6 +91,7 @@ AppPackages/
 # Others
 Web.Debug.config
 Web.Release.config
+AssemblyInfo.cs
 [Bb]in
 [Oo]bj
 sql
